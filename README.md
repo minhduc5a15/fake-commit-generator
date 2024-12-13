@@ -23,8 +23,8 @@ This project generates fake commits with random dates within a specified range. 
 
 2. Clone this repository:
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone https://github.com/minhduc5a15/fake-commit-generator
+   cd fake-commit-generator
    ```
 
 3. Compile the program:
