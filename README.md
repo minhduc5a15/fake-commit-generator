@@ -62,3 +62,5 @@ Done! Pushing changes...
 
 - The program automatically pushes the commits to the remote repository after generation.
 - If the current directory is not a Git repository, the program will prompt you to initialize one.
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3500&pause=1000&color=46D4F7&multiline=true&repeat=false&random=false&width=435&lines=Happy+coding!!!%F0%9F%98%8A%F0%9F%98%8A%F0%9F%98%8A;----------------------;Quick+fox+jumps+nightly+above+wizard)](https://git.io/typing-svg)
