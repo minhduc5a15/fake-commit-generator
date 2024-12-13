@@ -12,19 +12,19 @@ namespace bg = boost::gregorian;
 
 const string path = "./data.json";
 
-bool is_valid_date(const bg::date& date) {
+bool is_valid_date(const bg::date &date) {
     const bg::date start_date(2019, 1, 1);
     const bg::date end_date(2024, 12, 13);
     return date >= start_date && date <= end_date;
 }
 
-void write_to_json(const string& date) {
+void write_to_json(const string &date) {
     ofstream file(path);
     file << R"({ "date": ")" << date << "\" }" << endl;
     file.close();
 }
 
-void mark_commit(const string& date) {
+void mark_commit(const string &date) {
     write_to_json(date);
 
     system(("git add " + path).c_str());
@@ -47,7 +47,8 @@ void make_commits(const int num_commits) {
             string iso_date = bg::to_iso_extended_string(random_date);
             cout << "Creating commit: " << iso_date << endl;
             mark_commit(iso_date);
-        } else {
+        }
+        else {
             cout << "Invalid date, skipping..." << endl;
         }
     }
@@ -56,16 +57,8 @@ void make_commits(const int num_commits) {
     system("git push");
 }
 
-bool is_git_repo() {
-    return fs::exists(".git");
-}
 
 int main() {
-    if (!is_git_repo()) {
-        cout << "Error: This is not a Git repository. Please initialize a repository first using 'git init'." << endl;
-        return 1;
-    }
-
     int num_commits;
     cout << "Enter the number of commits to generate: ";
     cin >> num_commits;
