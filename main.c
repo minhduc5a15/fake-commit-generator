@@ -8,19 +8,17 @@ int is_valid_date(struct tm *date) {
     struct tm start_date = {0};
     struct tm end_date = {0};
 
-    // Set the start and end dates
-    start_date.tm_year = 2019 - 1900;  // tm_year is years since 1900
-    start_date.tm_mon = 0;  // January
+    start_date.tm_year = 2019 - 1900;
+    start_date.tm_mon = 0;
     start_date.tm_mday = 1;
 
     end_date.tm_year = 2024 - 1900;
-    end_date.tm_mon = 11;  // December
+    end_date.tm_mon = 11;
     end_date.tm_mday = 13;
 
-    // Convert struct tm to time_t for comparison
-    time_t start_time = mktime(&start_date);
-    time_t end_time = mktime(&end_date);
-    time_t current_time = mktime(date);
+    const time_t start_time = mktime(&start_date);
+    const time_t end_time = mktime(&end_date);
+    const time_t current_time = mktime(date);
 
     return (current_time >= start_time && current_time <= end_time);
 }
@@ -61,7 +59,7 @@ void make_commits(int num_commits) {
 
         struct tm random_date = base_date;
         random_date.tm_mday += random_weeks * 7 + random_days;
-        mktime(&random_date);  // Normalize the date
+        mktime(&random_date); 
 
         if (is_valid_date(&random_date)) {
             char iso_date[20];

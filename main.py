@@ -22,8 +22,6 @@ def mark_commit(date):
 def make_commits(num_commits):
     random.seed()
     base_date = datetime(2019, 1, 1)
-    weeks_dist = random.randint(0, 54 * 4)  # Random weeks
-    days_dist = random.randint(0, 6)  # Random days
 
     for _ in range(num_commits):
         random_weeks = random.randint(0, 54 * 4)
